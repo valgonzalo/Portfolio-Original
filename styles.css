@@ -109,6 +109,23 @@ nav a:hover {
     font-size: 56px;
 }
 
+
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+
 /* Efecto arcoiris completo para subtitle */
 .hero-text .subtitle {
     background: linear-gradient(90deg,

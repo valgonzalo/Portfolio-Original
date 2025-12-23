@@ -5,11 +5,11 @@ const tabContents = document.querySelectorAll('.tab-content');
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
         const tabName = button.getAttribute('data-tab');
-        
+
         // Remove active class from all buttons and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-        
+
         // Add active class to clicked button and corresponding content
         button.classList.add('active');
         document.getElementById(tabName).classList.add('active');
@@ -44,16 +44,16 @@ const projects = {
 // Open modal function
 function openModal(projectId) {
     const project = projects[projectId];
-    
+
     // Update modal content
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalCategory').textContent = project.category;
     document.getElementById('modalDescription').textContent = project.description;
-    
+
     // Update tags
     const tagsContainer = document.getElementById('modalTags');
     tagsContainer.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-    
+
     // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -82,10 +82,10 @@ document.addEventListener('keydown', (e) => {
 // Form submission
 document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Show success message
     alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
-    
+
     // Reset form
     e.target.reset();
 });
@@ -94,7 +94,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
@@ -111,12 +111,12 @@ const nav = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll <= 0) {
         nav.style.top = '20px';
         return;
     }
-    
+
     if (currentScroll > lastScroll && currentScroll > 100) {
         // Scrolling down
         nav.style.top = '-100px';
@@ -124,6 +124,6 @@ window.addEventListener('scroll', () => {
         // Scrolling up
         nav.style.top = '20px';
     }
-    
+
     lastScroll = currentScroll;
 });
