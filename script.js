@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ===============================
-   MODAL PROYECTOS
+        MODAL PROYECTOS
 ================================ */
 
 // Datos de proyectos
